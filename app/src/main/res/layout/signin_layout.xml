@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background = "@drawable/mask"
     tools:context=".MainActivity">
 
     <EditText
@@ -13,6 +14,7 @@
         android:layout_height="wrap_content"
         android:minHeight="48dp"
         android:hint="@string/email_label"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -25,6 +27,7 @@
         android:minHeight="48dp"
         android:hint="@string/password_label"
         android:inputType="textPassword"
+        android:background="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/email_input" />
@@ -48,6 +51,7 @@
         android:minWidth="48dp"
         android:minHeight="48dp"
         android:text="Sign up"
+        android:background="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
