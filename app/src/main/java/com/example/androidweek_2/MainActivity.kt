@@ -1,9 +1,11 @@
 package com.example.androidweek_2
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
@@ -13,12 +15,15 @@ class MainActivity : AppCompatActivity() {
 
         val loginButton: Button = findViewById(R.id.login_button)
         loginButton.setOnClickListener{ login() }
+
+        val signupButton:TextView = findViewById(R.id.signup_link)
+        signupButton.setOnClickListener { signup() }
     }
 
     private fun login()
     {
-        var username: EditText = findViewById(R.id.email_input)
-        var password: EditText = findViewById(R.id.password_input)
+        val username: EditText = findViewById(R.id.email_input)
+        val password: EditText = findViewById(R.id.password_input)
         if ("@gmail.com" in username.getText().toString())
         {
             Toast.makeText(this, "correct  format", Toast.LENGTH_SHORT).show()
@@ -27,5 +32,11 @@ class MainActivity : AppCompatActivity() {
         {
             Toast.makeText(this, "wrong email format", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun signup()
+    {
+        val intent: Intent = Intent(this, SignupActivity::class.java)
+        startActivity(intent)
     }
 }
