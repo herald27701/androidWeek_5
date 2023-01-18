@@ -8,6 +8,9 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 
+//val appdb = AppDatabase()
+var account = mutableMapOf<String, String>()
+
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,17 +23,33 @@ class MainActivity : AppCompatActivity() {
         signupButton.setOnClickListener { signup() }
     }
 
+    override fun onResume()
+    {
+        super.onResume()
+        val loginButton: Button = findViewById(R.id.login_button)
+        loginButton.setOnClickListener{ login() }
+
+        val signupButton:TextView = findViewById(R.id.signup_link)
+        signupButton.setOnClickListener { signup() }
+    }
+
     private fun login()
     {
         val username: EditText = findViewById(R.id.email_input)
         val password: EditText = findViewById(R.id.password_input)
-        if ("@gmail.com" in username.getText().toString())
+        if (account.containsKey(username.text.toString()) == true)
         {
-            Toast.makeText(this, "correct  format", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "TK Da ton tai", Toast.LENGTH_SHORT).show()
+            account.forEach{
+                println("AAA ${it.key} : ${it.value}")
+            }
         }
         else
         {
-            Toast.makeText(this, "wrong email format", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "TK Chua Dang Ky", Toast.LENGTH_SHORT).show()
+            account.forEach{
+                println("AAA ${it.key} : ${it.value}")
+            }
         }
     }
 
