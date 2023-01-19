@@ -26,7 +26,7 @@ class MainActivity : AppCompatActivity() {
         val password: EditText = findViewById(R.id.password_input)
         if ("@gmail.com" in username.getText().toString())
         {
-            Toast.makeText(this, "correct  format", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "correct email format", Toast.LENGTH_SHORT).show()
         }
         else
         {
