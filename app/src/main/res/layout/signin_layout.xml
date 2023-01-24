@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background = "@drawable/mask"
-    tools:context=".MainActivity">
+    tools:context=".SigninActivity">
 
     <EditText
         android:id="@+id/email_input"
@@ -36,7 +36,7 @@
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:backgroundTint="@android:color/holo_red_light"
+        android:backgroundTint="@android:color/holo_orange_dark"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

@@ -8,7 +8,7 @@ import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
 
-class MainActivity : AppCompatActivity() {
+class SigninActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.signin_layout)
@@ -24,9 +24,11 @@ class MainActivity : AppCompatActivity() {
     {
         val username: EditText = findViewById(R.id.email_input)
         val password: EditText = findViewById(R.id.password_input)
-        if ("@gmail.com" in username.getText().toString())
+        if ("username@gmail.com" in username.text.toString().trim() && "123456" in password.text.toString().trim())
         {
             Toast.makeText(this, "correct email format", Toast.LENGTH_SHORT).show()
+            val intent: Intent = Intent(this, ProfileActivity::class.java)
+            startActivity(intent)
         }
         else
         {
