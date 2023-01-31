@@ -26,13 +26,13 @@ class SigninActivity : AppCompatActivity() {
         val password: EditText = findViewById(R.id.password_input)
         if ("username@gmail.com" in username.text.toString().trim() && "123456" in password.text.toString().trim())
         {
-            Toast.makeText(this, "correct email format", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "correct email", Toast.LENGTH_SHORT).show()
             val intent: Intent = Intent(this, ProfileActivity::class.java)
             startActivity(intent)
         }
         else
         {
-            Toast.makeText(this, "wrong email format", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "wrong email", Toast.LENGTH_SHORT).show()
         }
     }
 
