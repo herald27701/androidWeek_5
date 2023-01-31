@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bg"
     tools:context=".OnboardActivity1">
 
     <Button
@@ -107,7 +108,7 @@
         android:id="@+id/maskgroup"
         android:layout_width="85dp"
         android:layout_height="98dp"
-        android:background="@drawable/mask_group"
+        android:background="@drawable/mask_group_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
