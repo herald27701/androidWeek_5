@@ -1,4 +1,4 @@
-package com.example.androidweek_2
+package com.example.androidweek_3
 
 import org.junit.Test
 

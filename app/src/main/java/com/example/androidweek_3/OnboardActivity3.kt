@@ -1,23 +1,23 @@
-package com.example.androidweek_2
+package com.example.androidweek_3
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageButton
 
-class OnboardActivity1 : AppCompatActivity() {
+class OnboardActivity3 : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_onboard1)
+        setContentView(R.layout.activity_onboard3)
 
-        val next1:ImageButton= findViewById(R.id.next1)
-        next1.setOnClickListener{ swip() }
+        val next3:ImageButton= findViewById(R.id.next3)
+        next3.setOnClickListener{ swip() }
 
 
     }
     fun swip()
     {
-        val intent: Intent = Intent(this, OnboardActivity2::class.java)
+        val intent: Intent = Intent(this, WelcomeActivity::class.java)
         startActivity(intent)
     }
 }
