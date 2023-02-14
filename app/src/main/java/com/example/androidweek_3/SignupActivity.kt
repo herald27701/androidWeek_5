@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.androidweek_3.databinding.SignupLayoutBinding
-//import com.watasolutions.w3_databinding_wm.Student
+import com.example.androidweek_3.Student
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var binding: SignupLayoutBinding
@@ -33,7 +33,17 @@ class SignupActivity : AppCompatActivity() {
     }
 
     private fun listenerSuccessEvent() {
-
+        ViewModel.isSuccessEvent.observe(this) { isSuccess ->
+            if (isSuccess) {
+                val email = binding.newEmailInput.text.toString().trim()
+                val password = binding.newPasswordInput.text.toString().trim()
+                val intent = Intent(this, ProfileActivity::class.java)
+                val bundle = Bundle()
+                bundle.putParcelable(Constants.KEY_USER, Student(email, password))
+                intent.putExtras(bundle)
+                startActivity(intent)
+            }
+        }
     }
 
     private fun listenerErrorEvent() {

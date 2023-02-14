@@ -5,30 +5,38 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
-
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import com.example.androidweek_3.databinding.ActivityProfileBinding
 class ProfileActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityProfileBinding
+    private lateinit var viewModel: doProfile
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_profile)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_profile)
+        viewModel = ViewModelProvider(this).get(doProfile::class.java)
 
-        val new_fullname: EditText = findViewById(R.id.new_name)
-        val new_email: EditText = findViewById(R.id.new_email_input)
-        val new_number: EditText = findViewById(R.id.new_number)
+        val bundle = intent.extras
+        bundle?.let {
+            val student : Student? = it.getParcelable(Constants.KEY_USER)
+            student?.let {
+                binding.newEmailInput.setText("${student.username}")
+            }
+        }
 
-        val signupClick: Button = findViewById(R.id.signup_button)
-        signupClick.setOnClickListener { signupEnter(new_fullname, new_email, new_number) }
+        binding.signupButton.setOnClickListener { signupEnter() }
     }
 
-    private fun signupEnter(new_fullname: EditText, new_email: EditText, new_number: EditText)
+    private fun signupEnter()
     {
-        val name: String = new_fullname.text.toString().trim()
-        val email: String = new_email.text.toString().trim()
-        val number: String = new_number.text.toString().trim()
+        val new_fullname: String = binding.newName.text.toString().trim() //findViewById(R.id.new_name)
+        val new_email: String = binding.newEmailInput.text.toString().trim()//findViewById(R.id.new_email_input)
+        val new_number: String = binding.newNumber.text.toString().trim()//findViewById(R.id.new_number)
 
         val bundle = Bundle()
-        bundle.putString("name", name)
-        bundle.putString("mail", email)
-        bundle.putString("num", number)
+        bundle.putString("name", new_fullname)
+        bundle.putString("mail", new_email)
+        bundle.putString("num", new_number)
         val intent: Intent = Intent(this, printProfileActivity::class.java)
         intent.putExtras(bundle)
         startActivity(intent)

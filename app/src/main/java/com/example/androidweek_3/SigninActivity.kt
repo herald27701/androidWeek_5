@@ -10,7 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.androidweek_3.databinding.SigninLayoutBinding
-//import com.watasolutions.w3_databinding_wm.Student
+import com.example.androidweek_3.Student
 
 class SigninActivity : AppCompatActivity() {
     private lateinit var binding: SigninLayoutBinding
@@ -43,7 +43,17 @@ class SigninActivity : AppCompatActivity() {
     }
 
     private fun listenerSuccessEvent() {
-
+        viewModel.isSuccessEvent.observe(this) { isSuccess ->
+            if (isSuccess) {
+                val email = binding.emailInput.text.toString().trim()
+                val password = binding.passwordInput.text.toString().trim()
+                val intent = Intent(this, ProfileActivity::class.java)
+                val bundle = Bundle()
+                bundle.putParcelable(Constants.KEY_USER, Student(email, password))
+                intent.putExtras(bundle)
+                startActivity(intent)
+            }
+        }
     }
 
     private fun listenerErrorEvent() {
