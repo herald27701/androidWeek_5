@@ -7,33 +7,29 @@ import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
+import com.example.androidweek_3.databinding.SigninLayoutBinding
 
 class SigninActivity : AppCompatActivity() {
+    private lateinit var binding: SigninLayoutBinding
+    private lateinit var viewModel: doSignin
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.signin_layout)
-
-        val loginButton: Button = findViewById(R.id.login_button)
-        loginButton.setOnClickListener{ login() }
-
-        val signupButton:TextView = findViewById(R.id.signup_link)
-        signupButton.setOnClickListener { signup() }
+        binding = DataBindingUtil.setContentView(this, R.layout.signin_layout)
+        viewModel = ViewModelProvider(this).get(doSignin::class.java)
+        
+        //val loginButton: Button = findViewById(R.id.login_button)
+        binding.loginButton.setOnClickListener{ login() }
+        //val signupButton:TextView = findViewById(R.id.signup_link)
+        binding.signupLink.setOnClickListener { signup() }
     }
 
     private fun login()
     {
-        val username: EditText = findViewById(R.id.email_input)
-        val password: EditText = findViewById(R.id.password_input)
-        if ("username@gmail.com" in username.text.toString().trim() && "123456" in password.text.toString().trim())
-        {
-            Toast.makeText(this, "correct email", Toast.LENGTH_SHORT).show()
-            val intent: Intent = Intent(this, ProfileActivity::class.java)
-            startActivity(intent)
-        }
-        else
-        {
-            Toast.makeText(this, "wrong email", Toast.LENGTH_SHORT).show()
-        }
+        val user_signin = binding.emailInput.text.toString().trim()
+        val password_signin = binding.emailInput.text.toString().trim()
+        viewModel.checkEmailAndPassword(user_signin, password_signin, this)
     }
 
     private fun signup()
