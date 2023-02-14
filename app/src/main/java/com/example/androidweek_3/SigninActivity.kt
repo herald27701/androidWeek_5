@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
 import com.example.androidweek_3.databinding.SigninLayoutBinding
+//import com.watasolutions.w3_databinding_wm.Student
 
 class SigninActivity : AppCompatActivity() {
     private lateinit var binding: SigninLayoutBinding
@@ -23,18 +24,31 @@ class SigninActivity : AppCompatActivity() {
         binding.loginButton.setOnClickListener{ login() }
         //val signupButton:TextView = findViewById(R.id.signup_link)
         binding.signupLink.setOnClickListener { signup() }
+
+        listenerSuccessEvent()
+        listenerErrorEvent()
     }
 
     private fun login()
     {
         val user_signin = binding.emailInput.text.toString().trim()
-        val password_signin = binding.emailInput.text.toString().trim()
-        viewModel.checkEmailAndPassword(user_signin, password_signin, this)
+        val password_signin = binding.passwordInput.text.toString().trim()
+        viewModel.checkEmailAndPassword(user_signin, password_signin)
     }
 
     private fun signup()
     {
         val intent: Intent = Intent(this, SignupActivity::class.java)
         startActivity(intent)
+    }
+
+    private fun listenerSuccessEvent() {
+
+    }
+
+    private fun listenerErrorEvent() {
+        viewModel.isErrorEvent.observe(this) { errMsg ->
+            Toast.makeText(this, errMsg, Toast.LENGTH_SHORT).show()
+        }
     }
 }
