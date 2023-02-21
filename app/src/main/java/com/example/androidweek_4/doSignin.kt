@@ -1,7 +1,5 @@
-package com.example.androidweek_3
+package com.example.androidweek_4
 
-import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
