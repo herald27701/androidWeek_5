@@ -1,7 +1,5 @@
-package com.example.androidweek_3
+package com.example.androidweek_4
 
-import android.content.Context
-import android.widget.Toast
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -24,17 +22,29 @@ class doSignin : ViewModel()
             return
         }
         if (!isValidPassword) {
-            _isErrorEvent.postValue("Hãy nhập password từ 8-10 kí tự")
+            _isErrorEvent.postValue("Password phải ít nhất 8 kí tự có chữ hoa, chữ thường, số, và các ký tự sau: ! @ # $ % ^ & * ( )")
             return
         }
         _isSuccessEvent.postValue(true)
     }
 
     private fun isEmailValid(email: String): Boolean {
-        return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        if (".com" in email)
+        {
+            return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()
+        }
+        return false
     }
 
     private fun isPasswordValid(password: String): Boolean {
-        return password.length in 8..10
+        val upperRegex = Regex("[A-Z]")
+        val numberRegex = Regex("\\d")
+        val specialRegex = Regex("[^A-Za-z0-9]")
+
+        val hasUpper = upperRegex.find(password) != null
+        val hasNumber = numberRegex.find(password) != null
+        val hasSpecial = specialRegex.find(password) != null
+
+        return hasUpper && hasNumber && hasSpecial && password.length >= 8
     }
 }
