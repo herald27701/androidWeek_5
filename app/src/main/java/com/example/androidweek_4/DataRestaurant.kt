@@ -102,12 +102,6 @@ object DataRestaurant {
                 "https://images.foody.vn/res/g3/28883/prof/s640x400/foody-mobile-p-jpg-800-635757703358128351.jpg"
             ),
             Image(
-                28883,
-                "Pizza Hut - Quang Trung",
-                "283 Quang Trung",
-                "https://images.foody.vn/res/g3/28883/prof/s640x400/foody-mobile-p-jpg-800-635757703358128351.jpg"
-            ),
-            Image(
                 129725,
                 "Bánh Mì Chảo & Món Ngon Hoa Việt - Quán Cô 3 Hậu",
                 "36 Đường Số 18, P. 8",
@@ -125,12 +119,12 @@ object DataRestaurant {
                 "293 Quang Trung",
                 "https://images.foody.vn/res/g16/158187/prof/s180x180/foody-mobile-coffeehousequangtrun-822-635754530645782536.jpg"
             ),
-            //Image(
-            //    30102,
-            //    "Cánh Đồng Quán - Lẩu Nướng Tại Bàn - Dương Quảng Hàm",
-            //    "310/14 Dương Quảng Hàm, P. 5",
-            //    "https://images.foody.vn/res/g4/30102/prof/s180x180/foody-mobile-shwadjuj-jpg-413-636204369735412311.jpg"
-            //),
+            Image(
+                30102,
+                "Cánh Đồng Quán - Lẩu Nướng Tại Bàn - Dương Quảng Hàm",
+                "310/14 Dương Quảng Hàm, P. 5",
+                "https://images.foody.vn/res/g4/30102/prof/s180x180/foody-mobile-shwadjuj-jpg-413-636204369735412311.jpg"
+            ),
         )
     }
 }
