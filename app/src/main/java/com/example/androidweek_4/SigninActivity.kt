@@ -43,7 +43,7 @@ class SigninActivity : AppCompatActivity() {
             if (isSuccess) {
                 val email = binding.emailInput.text.toString().trim()
                 val password = binding.passwordInput.text.toString().trim()
-                val intent = Intent(this, ProfileActivity::class.java)
+                val intent = Intent(this, Restaurant_rv::class.java)
                 val bundle = Bundle()
                 bundle.putParcelable(Constants.KEY_USER, Student(email, password))
                 intent.putExtras(bundle)
