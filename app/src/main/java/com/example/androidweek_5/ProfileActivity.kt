@@ -1,11 +1,11 @@
-package com.example.androidweek_4
+package com.example.androidweek_5
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.ViewModelProvider
-import com.example.androidweek_4.databinding.ActivityProfileBinding
+import com.example.androidweek_5.databinding.ActivityProfileBinding
 class ProfileActivity : AppCompatActivity() {
     private lateinit var binding: ActivityProfileBinding
     private lateinit var viewModel: doProfile

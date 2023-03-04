@@ -1,6 +1,6 @@
-package com.example.androidweek_4
+package com.example.androidweek_5
 
-import com.example.androidweek_4.model.Image
+import com.example.androidweek_5.model.Image
 
 object DataRestaurant {
     fun getDataSet(): List<Image> {

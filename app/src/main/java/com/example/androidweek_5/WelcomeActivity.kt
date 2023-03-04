@@ -1,4 +1,4 @@
-package com.example.androidweek_4
+package com.example.androidweek_5
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -8,7 +8,7 @@ import android.widget.Button
 class WelcomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_welcome)
 
         val next2: Button = findViewById(R.id.next0)
         next2.setOnClickListener { swip() }

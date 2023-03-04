@@ -1,4 +1,4 @@
-package com.example.androidweek_4
+package com.example.androidweek_5
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import androidx.databinding.DataBindingUtil
 import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
-import com.example.androidweek_4.databinding.SignupLayoutBinding
+import com.example.androidweek_5.databinding.SignupLayoutBinding
 
 class SignupActivity : AppCompatActivity() {
     private lateinit var binding: SignupLayoutBinding

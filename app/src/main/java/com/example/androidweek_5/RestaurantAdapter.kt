@@ -1,4 +1,4 @@
-package com.example.androidweek_4
+package com.example.androidweek_5
 
 import android.view.LayoutInflater
 import android.view.View
@@ -8,9 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.example.androidweek_4.model.Image
-import androidx.recyclerview.widget.ListAdapter
-import androidx.databinding.DataBindingUtil
+import com.example.androidweek_5.model.Image
 
 class RestaurantAdapter : RecyclerView.Adapter<RestaurantAdapter.ViewHolder>() {
 

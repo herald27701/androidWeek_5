@@ -1,10 +1,10 @@
-package com.example.androidweek_4
+package com.example.androidweek_5
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.androidweek_4.model.Image
+import com.example.androidweek_5.model.Image
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 

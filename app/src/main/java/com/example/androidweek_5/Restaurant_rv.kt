@@ -1,16 +1,14 @@
-package com.example.androidweek_4
-import android.content.Intent
+package com.example.androidweek_5
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
-import android.widget.ImageButton
 import android.widget.Switch
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.androidweek_4.databinding.RvLayoutBinding
+import com.example.androidweek_5.databinding.RvLayoutBinding
 
 class Restaurant_rv : AppCompatActivity(){
 
