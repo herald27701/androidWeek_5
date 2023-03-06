@@ -8,7 +8,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.androidweek_5.R
 import com.example.androidweek_5.databinding.RvLayoutBinding
+
 
 class Restaurant_rv : AppCompatActivity(){
 

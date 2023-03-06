@@ -9,7 +9,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
+import com.example.androidweek_5.R
 import com.example.androidweek_5.databinding.ActivityOnboard1Binding
+
 
 class OnboardActivity1 : Fragment() {
     lateinit var binding: ActivityOnboard1Binding

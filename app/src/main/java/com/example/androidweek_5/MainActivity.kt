@@ -2,6 +2,7 @@ package com.example.androidweek_5
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.androidweek_5.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

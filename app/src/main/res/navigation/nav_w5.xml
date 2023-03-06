@@ -50,6 +50,35 @@
             android:label="OnboardActivity3" />
         <action
             android:id="@+id/action_Onboard3Fragment_to_WelcomeFragment"
-             />
+            app:destination="@id/welcomeActivity1"/>
     </fragment>
+
+    <fragment
+        android:id="@+id/welcomeActivity1"
+        android:name="com.example.androidweek_5.WelcomeActivity"
+        android:label="WelcomeActivity"
+        tools:layout="@layout/activity_welcome">
+        <activity
+            android:id="@+id/WelcomeActivity"
+            android:name="com.example.androidweek_5.WelcomeActivity"
+            android:label="Welcome" />
+        <action
+            android:id="@+id/WelcomeFragment_to_SignIn"
+            app:destination="@id/signinActivity1"
+            />
+    </fragment>
+    <fragment
+        android:id="@+id/signinActivity1"
+        android:name="com.example.androidweek_5.SigninActivity"
+        android:label="SigninActivity"
+        tools:layout="@layout/signin_layout">
+        <activity
+            android:id="@+id/SigninActivity"
+            android:name="com.example.androidweek_5.WelcomeActivity"
+            android:label="Welcome" />
+        <action
+            android:id="@+id/SignIn_to_"/>
+    </fragment>
+
+
 </navigation>
