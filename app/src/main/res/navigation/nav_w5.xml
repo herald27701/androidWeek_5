@@ -17,7 +17,9 @@
             android:label="OnboardActivity1" />
         <action
             android:id="@+id/action_Onboard1Fragment_to_Onboard2Fragment"
-            app:destination="@id/Onboard2Fragment" />
+            app:destination="@id/Onboard2Fragment"
+            app:popUpTo="@id/Onboard1Fragment"
+            app:popUpToInclusive="true"/>
 
 
     </fragment>
@@ -34,7 +36,9 @@
             android:label="OnboardActivity2" />
         <action
             android:id="@+id/action_Onboard2Fragment_to_Onboard3Fragment"
-            app:destination="@id/Onboard3Fragment" />
+            app:destination="@id/Onboard3Fragment"
+            app:popUpTo="@id/Onboard2Fragment"
+            app:popUpToInclusive="true"/>
 
     </fragment>
 
@@ -50,7 +54,9 @@
             android:label="OnboardActivity3" />
         <action
             android:id="@+id/action_Onboard3Fragment_to_WelcomeFragment"
-            app:destination="@id/welcomeActivity1"/>
+            app:destination="@id/welcomeActivity1"
+            app:popUpTo="@id/Onboard3Fragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <fragment
@@ -65,7 +71,8 @@
         <action
             android:id="@+id/WelcomeFragment_to_SignIn"
             app:destination="@id/signinActivity1"
-            />
+            app:popUpTo="@id/welcomeActivity1"
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/signinActivity1"
@@ -75,9 +82,54 @@
         <activity
             android:id="@+id/SigninActivity"
             android:name="com.example.androidweek_5.WelcomeActivity"
-            android:label="Welcome" />
+            android:label="Signin" />
         <action
-            android:id="@+id/SignIn_to_"/>
+            android:id="@+id/SignIn_to_SignUp"
+            app:destination="@id/signupActivity" />
+        <action
+            android:id="@+id/SignIn_to_Home"
+            app:destination="@id/restaurant_rv"
+            app:popUpTo="@id/signinActivity1"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+
+    <fragment
+        android:id="@+id/signupActivity"
+        android:name="com.example.androidweek_5.SignupActivity"
+        android:label="SignupActivity"
+        tools:layout="@layout/signup_layout">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/restaurant_rv"
+        android:name="com.example.androidweek_5.Restaurant_rv"
+        android:label="Restaurant_rv"
+        tools:layout="@layout/rv_layout">
+        <action
+            android:id="@+id/restaurant_rv_to_profileActivity"
+            app:destination="@id/profileActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/profileActivity"
+        android:name="com.example.androidweek_5.ProfileActivity"
+        android:label="ProfileActivity"
+        tools:layout="@layout/activity_profile">
+        <action
+            android:id="@+id/action_profileActivity_to_printProfileActivity"
+            app:destination="@id/printProfileActivity" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/printProfileActivity"
+        android:name="com.example.androidweek_5.printProfileActivity"
+        android:label="printProfileActivity"
+        tools:layout="@layout/activity_print_profile">
+        <action
+            android:id="@+id/action_printProfileActivity_to_welcomeActivity1"
+            app:destination="@id/welcomeActivity1" />
     </fragment>
 
 

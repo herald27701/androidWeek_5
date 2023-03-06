@@ -10,6 +10,7 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import com.example.androidweek_5.R
 import com.example.androidweek_5.databinding.SigninLayoutBinding
 
@@ -42,7 +43,7 @@ class SigninActivity : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel = ViewModelProvider(this).get(doSignin::class.java)
+        viewModel = ViewModelProvider(this)[doSignin::class.java]
 
         binding.loginButton.setOnClickListener { login() }
         binding.signupLink.setOnClickListener { signup() }
@@ -60,8 +61,10 @@ class SigninActivity : Fragment() {
 
     private fun signup()
     {
-        val intent: Intent = Intent(requireActivity(), SignupActivity::class.java)
-        startActivity(intent)
+        //val intent: Intent = Intent(requireActivity(), SignupActivity::class.java)
+        //startActivity(intent)
+        val controller = findNavController()
+        controller.navigate(R.id.SignIn_to_SignUp)
     }
 
     private fun listenerSuccessEvent() {
@@ -73,7 +76,9 @@ class SigninActivity : Fragment() {
                 val bundle = Bundle()
                 bundle.putParcelable(Constants.KEY_USER, Student(email, password))
                 intent.putExtras(bundle)
-                startActivity(intent)
+                //startActivity(intent)
+                val controller = findNavController()
+                controller.navigate(R.id.SignIn_to_Home)
             }
         }
     }

@@ -15,11 +15,30 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
             android:layout_width="match_parent"
-            android:layout_height="100mm"
+            android:layout_height="90mm"
             android:scrollbars="vertical"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@id/mvtoProfiles" />
+
+        <ImageButton
+            android:id="@+id/mvtoProfiles"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:text="avt"
+            app:layout_constraintBottom_toTopOf="@id/recyclerView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:srcCompat="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/profile_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Profile"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/mvtoProfiles" />
 
         <Button
             android:id="@+id/btnLoad"
@@ -36,8 +55,6 @@
             android:gravity="bottom"
 
             app:layout_constraintBottom_toBottomOf="@+id/recyclerView">
-
-
 
             <Switch
                 android:id="@+id/menuswitch"

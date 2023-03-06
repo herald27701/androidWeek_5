@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.androidweek_5.R
 import com.example.androidweek_5.databinding.SignupLayoutBinding
+import androidx.navigation.fragment.findNavController
 
 
 class SignupActivity : Fragment() {
@@ -23,11 +24,14 @@ class SignupActivity : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return super.onCreateView(inflater, container, savedInstanceState)
+        //return super.onCreateView(inflater, container, savedInstanceState)
 //    }(savedInstanceState: Bundle?) {
 //        super.onCreate(savedInstanceState)
         binding = DataBindingUtil.inflate(inflater, R.layout.signup_layout, container, false)
-
+        return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?)
+    {
         binding.signupButton.setOnClickListener {signup_lientay()}
         ViewModel = ViewModelProvider(this).get(doSignUp::class.java)
 

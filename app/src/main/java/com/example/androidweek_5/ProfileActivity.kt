@@ -9,7 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.example.androidweek_5.R
+import androidx.navigation.fragment.findNavController
 import com.example.androidweek_5.databinding.ActivityProfileBinding
 
 class ProfileActivity : Fragment() {
@@ -37,11 +37,15 @@ class ProfileActivity : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = DataBindingUtil.inflate(inflater, R.layout.activity_profile, container, false)
+        return binding.root
+    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(doProfile::class.java)
 
         val bundle = arguments
         bundle?.let {
-            val student : Student? = it.getParcelable(Constants.KEY_USER)
+            val student: Student? = it.getParcelable(Constants.KEY_USER)
             student?.let {
                 binding.newEmailInput.setText("${student.username}")
             }
@@ -57,9 +61,13 @@ class ProfileActivity : Fragment() {
             bundle.putString("name", new_fullname)
             bundle.putString("mail", new_email)
             bundle.putString("num", new_number)
-
+            val intent: Intent = Intent(requireContext(), printProfileActivity::class.java)
+            intent.putExtras(bundle)
+            //startActivity(intent)
+            val controller = findNavController()
+            controller.navigate(R.id.action_profileActivity_to_printProfileActivity)
         }
-
-        return binding.root
     }
+
+
 }
